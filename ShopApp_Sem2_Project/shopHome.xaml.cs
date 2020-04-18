@@ -31,6 +31,9 @@ namespace ShopApp_Sem2_Project
         public decimal price1; public decimal price2; public decimal price3; public decimal price4;
         public string name1; public string name2; public string name3; public string name4;
 
+        public int totalQuanity;
+        public decimal totalPrice;
+
         public shopHome()
         {
             InitializeComponent();
@@ -78,9 +81,9 @@ namespace ShopApp_Sem2_Project
 
         private void LbxCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            populateComboBoxes();
-
             clearItems();
+            disableButtons();
+            populateComboBoxes();
 
             if (e.AddedItems != null && e.AddedItems.Count > 0)
             {
@@ -241,43 +244,58 @@ namespace ShopApp_Sem2_Project
             }
         }
 
+        private void disableButtons()
+        {
+            btnAddItem1.IsEnabled = false; btnAddItem2.IsEnabled = false; btnAddItem3.IsEnabled = false; btnAddItem4.IsEnabled = false;
+        }
+
         private void populateComboBoxes()
         {
+            qty1.Text = "Quantity"; qty2.Text = "Quantity"; qty3.Text = "Quantity"; qty4.Text = "Quantity";
+
             int a = 0;
             int i = 1;
 
-            switch (a)
+            while(a < 5)
             {
-                case 0:
-                    while(i < 10)
-                    {
-                        qty1.Items.Add(i);
-                    }
-                    i = 0;
-                    break;
-                case 1:
-                    while (i < 10)
-                    {
-                        qty2.Items.Add(i);
-                    }
-                    i = 0;
-                    break;
-                case 2:
-                    while (i < 10)
-                    {
-                        qty3.Items.Add(i);
-                    }
-                    i = 0;
-                    break;
-                case 3:
-                    while (i < 10)
-                    {
-                        qty4.Items.Add(i);
-                    }
-                    i = 0;
-                    break;
-                case 4:
-                    break;
+                switch (a)
+                {
+                    case 0:
+                        while (i < 7)
+                        {
+                            qty1.Items.Add(i);
+                            i++;
+                        }
+                        i = 1;
+                        break;
+                    case 1:
+                        while (i < 7)
+                        {
+                            qty2.Items.Add(i);
+                            i++;
+                        }
+                        i = 1;
+                        break;
+                    case 2:
+                        while (i < 7)
+                        {
+                            qty3.Items.Add(i);
+                            i++;
+                        }
+                        i = 1;
+                        break;
+                    case 3:
+                        while (i < 7)
+                        {
+                            qty4.Items.Add(i);
+                            i++;
+                        }
+                        i = 1;
+                        break;
+                    case 4:
+                        break;
+                }
+                a++;
             }
         }
 
@@ -288,6 +306,7 @@ namespace ShopApp_Sem2_Project
             tblkInfo1.Text = null; tblkInfo2.Text = null; tblkInfo3.Text = null; tblkInfo4.Text = null;
             tblkPrice1.Text = null; tblkPrice2.Text = null; tblkPrice3.Text = null; tblkPrice4.Text = null;
             tblkMan1.Text = null; tblkMan2.Text = null; tblkMan3.Text = null; tblkMan4.Text = null;
+            qty1.Items.Clear(); qty2.Items.Clear(); qty3.Items.Clear(); qty4.Items.Clear();
         }
 
         private void BtnLgout_Click(object sender, RoutedEventArgs e)
@@ -306,24 +325,35 @@ namespace ShopApp_Sem2_Project
 
         private void BtnAddItem1_Click(object sender, RoutedEventArgs e)
         {
-            addItem(name1, price1);
+            int quantity1 = Convert.ToInt32(qty1.SelectedValue);
+
+            addItem(name1, price1, quantity1);
         }
         private void BtnAddItem2_Click(object sender, RoutedEventArgs e)
         {
-            addItem(name2, price2);
+            int quantity2 = Convert.ToInt32(qty2.SelectedValue);
+
+            addItem(name2, price2, quantity2);
         }
         private void BtnAddItem3_Click(object sender, RoutedEventArgs e)
         {
-            addItem(name3, price3);
+            int quantity3 = Convert.ToInt32(qty3.SelectedValue);
+
+            addItem(name3, price3, quantity3);
         }
         private void BtnAddItem4_Click(object sender, RoutedEventArgs e)
         {
-            addItem(name4, price4);
+            int quantity4 = Convert.ToInt32(qty4.SelectedValue);
+
+            addItem(name4, price4, quantity4);
         }
 
-        private void addItem(string name, decimal price)
+        private void addItem(string name, decimal price, int quantity)
         {
-            string productAdded = $"{name}\nPrice : {price:C2}\n-----------------------------------";
+            totalQuanity += quantity;
+            totalPrice += price*quantity;
+
+            string productAdded = $"{name}\nPrice : {price:C2}\nQuantity : {quantity}\n-----------------------------------";
 
             cartItem item = new cartItem(productAdded);
 
@@ -332,7 +362,42 @@ namespace ShopApp_Sem2_Project
 
         private void BtnViewCart_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new cart(cartItems));
+            this.NavigationService.Navigate(new cart(cartItems, totalQuanity, totalPrice));
+        }
+
+        private void Qty1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnAddItem1.IsEnabled = true;
+        }
+
+        private void Qty2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnAddItem2.IsEnabled = true;
+        }
+
+        private void Qty3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnAddItem3.IsEnabled = true;
+        }
+
+        private void Qty4_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnAddItem4.IsEnabled = true;
+        }
+
+        private void BtnAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+             MessageBoxResult result = MessageBox.Show("Are you sure you wish to clear your cart?", "Caution!", MessageBoxButton.YesNo);
+
+             switch (result)
+             {
+                 case MessageBoxResult.Yes:
+                     cartItems.Clear();
+                     this.NavigationService.Navigate(new shopHome());
+                     break;
+                 case MessageBoxResult.No:
+                     break;
+             }
         }
     }
 }

@@ -55,4 +55,19 @@ namespace ShopApp_Sem2_Project
         }
         #endregion Constructors
     }
+    public class qtyAndPrice
+    {
+        #region Properties
+        public int Quantity { get; set; }
+        public decimal Price { get; set; }
+        #endregion Properties
+
+        #region Constructors
+        public qtyAndPrice(int quantity, decimal price)
+        {
+            Quantity = quantity;
+            Price = Price;
+        }
+        #endregion Constructors
+    }
 }

@@ -56,12 +56,22 @@
         <Border Grid.Column="0" Background="#FFD67554"/>
         <Border Grid.Column="1" Background="#FFD78164"/>
         <Border Grid.Row="1" Background="#FFD78164"/>
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="3px"/>
 
         <ListBox x:Name="lbxCartItems" HorizontalAlignment="Left" Height="325" VerticalAlignment="Top" Width="240" Margin="20,10.539,0,0" Grid.Row="1" Background="#FFC7D0D9" FontSize="16" BorderBrush="Black" Loaded="LbxCartItems_Loaded"/>
         <TextBlock HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Cart" VerticalAlignment="Top" Width="175" TextAlignment="Center" Height="40" FontSize="28"/>
         <Button BorderBrush="Black" x:Name="btnLgout" Content="Logout" Grid.Column="1" HorizontalAlignment="Left" Margin="13,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC" Click="BtnLgout_Click"/>
-        <Button BorderBrush="Black" x:Name="btnAddToCart" Content="Clear Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="178,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC"/>
+        <Button BorderBrush="Black" x:Name="btnClearCart" Content="Clear Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="178,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC" Click="BtnClearCart_Click"/>
         <Button BorderBrush="Black" x:Name="btnViewShop" Content="View Shop" Grid.Column="1" HorizontalAlignment="Left" Margin="343,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC" Click="BtnViewShop_Click"/>
 
+        <TextBlock Text="Checkout" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 15, 0, 0" FontSize="36"/>
+        <Border Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 70, 0, 0" Height="230" Width="480" BorderBrush="#FF447DBC" CornerRadius="3" BorderThickness="3">
+            <Grid>
+            <TextBlock x:Name="totalQuanityTxt" TextWrapping="Wrap" Text="Total Number of Items in Cart: " FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30, 10, 0, 0"/>
+            <TextBlock x:Name="tblkTotalQuantity" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="360,10,0,0" FontSize="24"/>
+            <TextBlock x:Name="totalPriceTxt" TextWrapping="Wrap" Text="Total Price of Items in Cart: " FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30, 60, 0, 0"/>
+            <TextBlock x:Name="tblkTotalPrice" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="360,60,0,0" FontSize="24"/>
+            </Grid>
+        </Border>
     </Grid>
 </Page>
