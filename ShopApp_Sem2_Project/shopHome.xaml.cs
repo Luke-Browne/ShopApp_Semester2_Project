@@ -31,18 +31,21 @@ namespace ShopApp_Sem2_Project
         public decimal price1; public decimal price2; public decimal price3; public decimal price4;
         public string name1; public string name2; public string name3; public string name4;
 
-        public int totalQuanity;
-        public decimal totalPrice;
+        private decimal totalPrice;
+        private int totalQty;
 
         public shopHome()
         {
             InitializeComponent();
         }
 
-        public shopHome(List<cartItem> cartItems)
+        public shopHome(List<cartItem> cartItems, int totalQuantity, decimal totalPrice)
         {
             InitializeComponent();
+
             this.cartItems = cartItems;
+            this.totalQty = totalQuantity;
+            this.totalPrice = totalPrice;
         }
 
         private void LbxCategories_Loaded(object sender, RoutedEventArgs e)
@@ -350,19 +353,19 @@ namespace ShopApp_Sem2_Project
 
         private void addItem(string name, decimal price, int quantity)
         {
-            totalQuanity += quantity;
-            totalPrice += price*quantity;
-
             string productAdded = $"{name}\nPrice : {price:C2}\nQuantity : {quantity}\n-----------------------------------";
 
             cartItem item = new cartItem(productAdded);
 
             cartItems.Add(item);
+
+            totalQty += quantity;
+            totalPrice += price * quantity;
         }
 
         private void BtnViewCart_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new cart(cartItems, totalQuanity, totalPrice));
+            this.NavigationService.Navigate(new cart(cartItems, totalQty, totalPrice));
         }
 
         private void Qty1_SelectionChanged(object sender, SelectionChangedEventArgs e)

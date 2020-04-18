@@ -20,11 +20,12 @@ namespace ShopApp_Sem2_Project
     /// </summary>
     public partial class cart : Page
     {
+        public decimal price;
+
         private List<cartItem> cartItems;
 
-        public int totalQuantity;
-        public decimal totalPrice;
-        public decimal displayPrice = 0;
+        private int totalQuantity;
+        private decimal totalPrice;
 
         public cart(List<cartItem> cartItems, int totalQuantity, decimal totalPrice)
         {
@@ -51,26 +52,22 @@ namespace ShopApp_Sem2_Project
 
         private void BtnViewShop_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new shopHome(cartItems));
+            this.NavigationService.Navigate(new shopHome(cartItems, totalQuantity, totalPrice));
         }
 
         private void LbxCartItems_Loaded(object sender, RoutedEventArgs e)
         {
-            displayPrice = displayPrice + totalPrice;
-
             var results = cartItems.Select(x => x.ProductAdded);
 
             lbxCartItems.ItemsSource = results;
 
             tblkTotalQuantity.Text = totalQuantity.ToString();
 
-            tblkTotalPrice.Text = $"{displayPrice:C2}";
+            tblkTotalPrice.Text = $"{totalPrice:C2}";
         }
 
         private void BtnClearCart_Click(object sender, RoutedEventArgs e)
         {
-            displayPrice = 0;
-
             MessageBoxResult result = MessageBox.Show("Are you sure you wish to clear your cart?", "Caution!", MessageBoxButton.YesNo);
 
             switch(result)
