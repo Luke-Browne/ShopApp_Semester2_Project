@@ -1,0 +1,67 @@
+﻿<Page x:Class="ShopApp_Sem2_Project.cart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShopApp_Sem2_Project"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="cart">
+
+    <Page.Resources>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="Padding" Value="2,0,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="true"/>
+                                    <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="375*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="149*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#FFD67554"/>
+        <Border Grid.Column="1" Background="#FFD78164"/>
+        <Border Grid.Row="1" Background="#FFD78164"/>
+
+        <ListBox x:Name="lbxCartItems" HorizontalAlignment="Left" Height="325" VerticalAlignment="Top" Width="240" Margin="20,10.539,0,0" Grid.Row="1" Background="#FFC7D0D9" FontSize="16" BorderBrush="Black" Loaded="LbxCartItems_Loaded"/>
+        <TextBlock HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Cart" VerticalAlignment="Top" Width="175" TextAlignment="Center" Height="40" FontSize="28"/>
+        <Button BorderBrush="Black" x:Name="btnLgout" Content="Logout" Grid.Column="1" HorizontalAlignment="Left" Margin="13,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC" Click="BtnLgout_Click"/>
+        <Button BorderBrush="Black" x:Name="btnAddToCart" Content="Clear Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="178,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC"/>
+        <Button BorderBrush="Black" x:Name="btnViewShop" Content="View Shop" Grid.Column="1" HorizontalAlignment="Left" Margin="343,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC" Click="BtnViewShop_Click"/>
+
+    </Grid>
+</Page>

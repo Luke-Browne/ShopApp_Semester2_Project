@@ -25,17 +25,26 @@ namespace ShopApp_Sem2_Project
     {
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Owner\Desktop\College Work\OOD\ShopApp_Sem2_Project\items.mdf;Integrated Security=True;";
 
-        List<Item> allItems = new List<Item>();
-        List<cartItem> cartItems = new List<cartItem>();
+        public List<Item> allItems = new List<Item>();
+        public List<cartItem> cartItems = new List<cartItem>();
+
+        public decimal price1; public decimal price2; public decimal price3; public decimal price4;
+        public string name1; public string name2; public string name3; public string name4;
 
         public shopHome()
         {
             InitializeComponent();
         }
 
+        public shopHome(List<cartItem> cartItems)
+        {
+            InitializeComponent();
+            this.cartItems = cartItems;
+        }
+
         private void LbxCategories_Loaded(object sender, RoutedEventArgs e)
         {
-            hideButtons();
+            lbxCategories.SelectedIndex = 0;
 
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
@@ -67,24 +76,9 @@ namespace ShopApp_Sem2_Project
             }
         }
 
-        private void hideButtons()
-        {
-            btnAddItem1.IsEnabled = false; btnAddItem1.Visibility = Visibility.Hidden;
-            btnAddItem2.IsEnabled = false; btnAddItem2.Visibility = Visibility.Hidden;
-            btnAddItem3.IsEnabled = false; btnAddItem3.Visibility = Visibility.Hidden;
-            btnAddItem4.IsEnabled = false; btnAddItem4.Visibility = Visibility.Hidden;
-        }
-        private void showButtons()
-        {
-            btnAddItem1.IsEnabled = true; btnAddItem1.Visibility = Visibility.Visible;
-            btnAddItem2.IsEnabled = true; btnAddItem2.Visibility = Visibility.Visible;
-            btnAddItem3.IsEnabled = true; btnAddItem3.Visibility = Visibility.Visible;
-            btnAddItem4.IsEnabled = true; btnAddItem4.Visibility = Visibility.Visible;
-        }
-
         private void LbxCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            showButtons();
+            populateComboBoxes();
 
             clearItems();
 
@@ -134,15 +128,19 @@ namespace ShopApp_Sem2_Project
                         {
                             case 0:
                                 tblkName1.Text = name;
+                                name1 = name.ToString();
                                 break;
                             case 1:
                                 tblkName2.Text = name;
+                                name2 = name.ToString();
                                 break;
                             case 2:
                                 tblkName3.Text = name;
+                                name3 = name.ToString();
                                 break;
                             case 3:
                                 tblkName4.Text = name;
+                                name4 = name.ToString();
                                 break;
                             case 4:
                                 break;
@@ -220,15 +218,19 @@ namespace ShopApp_Sem2_Project
                         {
                             case 0:
                                 tblkPrice1.Text = ("Price : €" + priceWithDecimal);
+                                price1 = Convert.ToDecimal(priceWithDecimal);
                                 break;
                             case 1:
                                 tblkPrice2.Text = ("Price : €" + priceWithDecimal);
+                                price2 = Convert.ToDecimal(priceWithDecimal);
                                 break;
                             case 2:
                                 tblkPrice3.Text = ("Price : €" + priceWithDecimal);
+                                price3 = Convert.ToDecimal(priceWithDecimal);
                                 break;
                             case 3:
                                 tblkPrice4.Text = ("Price : €" + priceWithDecimal);
+                                price4 = Convert.ToDecimal(priceWithDecimal);
                                 break;
                             case 4:
                                 break;
@@ -236,6 +238,46 @@ namespace ShopApp_Sem2_Project
                         a++;
                     }
                 }
+            }
+        }
+
+        private void populateComboBoxes()
+        {
+            int a = 0;
+            int i = 1;
+
+            switch (a)
+            {
+                case 0:
+                    while(i < 10)
+                    {
+                        qty1.Items.Add(i);
+                    }
+                    i = 0;
+                    break;
+                case 1:
+                    while (i < 10)
+                    {
+                        qty2.Items.Add(i);
+                    }
+                    i = 0;
+                    break;
+                case 2:
+                    while (i < 10)
+                    {
+                        qty3.Items.Add(i);
+                    }
+                    i = 0;
+                    break;
+                case 3:
+                    while (i < 10)
+                    {
+                        qty4.Items.Add(i);
+                    }
+                    i = 0;
+                    break;
+                case 4:
+                    break;
             }
         }
 
@@ -264,7 +306,33 @@ namespace ShopApp_Sem2_Project
 
         private void BtnAddItem1_Click(object sender, RoutedEventArgs e)
         {
-            cartItem item = new cartItem(tblkName1.ToString(), Convert.ToDecimal(tblkPrice1));
+            addItem(name1, price1);
+        }
+        private void BtnAddItem2_Click(object sender, RoutedEventArgs e)
+        {
+            addItem(name2, price2);
+        }
+        private void BtnAddItem3_Click(object sender, RoutedEventArgs e)
+        {
+            addItem(name3, price3);
+        }
+        private void BtnAddItem4_Click(object sender, RoutedEventArgs e)
+        {
+            addItem(name4, price4);
+        }
+
+        private void addItem(string name, decimal price)
+        {
+            string productAdded = $"{name}\nPrice : {price:C2}\n-----------------------------------";
+
+            cartItem item = new cartItem(productAdded);
+
+            cartItems.Add(item);
+        }
+
+        private void BtnViewCart_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new cart(cartItems));
         }
     }
 }

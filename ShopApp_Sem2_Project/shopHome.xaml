@@ -22,11 +22,11 @@
         <Border Grid.Column="1" Background="#FFD78164"/>
         <Border Grid.Row="1" Background="#FFD78164"/>
 
-        <ListBox x:Name="lbxCategories" HorizontalAlignment="Left" Height="325" VerticalAlignment="Top" Width="175" Margin="20,10.539,0,0" Grid.Row="1" Background="#FFC7D0D9" Loaded="LbxCategories_Loaded" FontSize="18" SelectionChanged="LbxCategories_SelectionChanged" BorderBrush="Black"/>
+        <ListBox HorizontalContentAlignment="Center" x:Name="lbxCategories" HorizontalAlignment="Left" Height="325" VerticalAlignment="Top" Width="175" Margin="20,10.539,0,0" Grid.Row="1" Background="#FFC7D0D9" Loaded="LbxCategories_Loaded" FontSize="18" SelectionChanged="LbxCategories_SelectionChanged" BorderBrush="Black"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" Text="Categories" VerticalAlignment="Top" Width="175" TextAlignment="Center" Height="40" FontSize="28"/>
         <Button BorderBrush="Black" x:Name="btnLgout" Content="Logout" Grid.Column="1" HorizontalAlignment="Left" Margin="29.8,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC" Click="BtnLgout_Click"/>
         <Button BorderBrush="Black" x:Name="btnAddToCart" Content="Clear Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="213.8,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC"/>
-        <Button BorderBrush="Black" x:Name="btnViewCart" Content="View Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="395.8,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC"/>
+        <Button BorderBrush="Black" x:Name="btnViewCart" Content="View Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="395.8,10,0,15.2" VerticalAlignment="Center" Width="150" Height="50" FontSize="26" Background="#FF447DBC" Click="BtnViewCart_Click"/>
         <Image x:Name="img1" Grid.Column="1" HorizontalAlignment="Left" Height="75" Margin="15,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
         <Image x:Name="img2" Grid.Column="1" HorizontalAlignment="Left" Height="75" Margin="15,100,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
         <Image x:Name="img3" Grid.Column="1" HorizontalAlignment="Left" Height="75" Margin="15,190,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
@@ -52,9 +52,15 @@
         <TextBlock x:Name="tblkPrice3" Grid.Column="1" HorizontalAlignment="Left" Margin="105,240,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
         <TextBlock x:Name="tblkPrice4" Grid.Column="1" HorizontalAlignment="Left" Margin="105,320,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
 
-        <Button BorderBrush="Black" x:Name="btnAddItem1" Content="Add to Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="320,50,0,0" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1" Background="#FF447DBC" Click="BtnAddItem1_Click"/>
-        <Button BorderBrush="Black" x:Name="btnAddItem2" Content="Add to Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="320,145,0,0" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1" Background="#FF447DBC"/>
-        <Button BorderBrush="Black" x:Name="btnAddItem3" Content="Add to Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="320,235,0,0" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1" Background="#FF447DBC"/>
-        <Button BorderBrush="Black" x:Name="btnAddItem4" Content="Add to Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="320,315,0,0" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1" Background="#FF447DBC"/>
+        <Button BorderBrush="Black" x:Name="btnAddItem1" Content="Add to Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="280,50,0,0" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1" Background="#FF447DBC" Click="BtnAddItem1_Click"/>
+        <Button BorderBrush="Black" x:Name="btnAddItem2" Content="Add to Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="280,145,0,0" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1" Background="#FF447DBC" Click="BtnAddItem2_Click"/>
+        <Button BorderBrush="Black" x:Name="btnAddItem3" Content="Add to Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="280,235,0,0" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1" Background="#FF447DBC" Click="BtnAddItem3_Click"/>
+        <Button BorderBrush="Black" x:Name="btnAddItem4" Content="Add to Cart" Grid.Column="1" HorizontalAlignment="Left" Margin="280,315,0,0" VerticalAlignment="Top" Width="150" Height="30" Grid.Row="1" Background="#FF447DBC" Click="BtnAddItem4_Click"/>
+
+        <ComboBox x:Name="qty1" Grid.Column="1" HorizontalAlignment="Left" Margin="440,50,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="30" IsEditable="True" Text="Quantity" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
+        <ComboBox x:Name="qty2" Grid.Column="1" HorizontalAlignment="Left" Margin="440,145,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="30" IsEditable="True" Text="Quantity" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
+        <ComboBox x:Name="qty3" Grid.Column="1" HorizontalAlignment="Left" Margin="440,235,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="30" IsEditable="True" Text="Quantity" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
+        <ComboBox x:Name="qty4" Grid.Column="1" HorizontalAlignment="Left" Margin="440,315,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Height="30" IsEditable="True" Text="Quantity" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
+
     </Grid>
 </Page>

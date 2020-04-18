@@ -45,15 +45,13 @@ namespace ShopApp_Sem2_Project
     public class cartItem
     {
         #region Properties
-        public string ProductName { get; set; }
-        public decimal Price { get; set; }
+        public string ProductAdded { get; set; }
         #endregion Properties
 
         #region Constructors
-        public cartItem(string product, decimal price)
+        public cartItem(string productAdded)
         {
-            ProductName = product;
-            Price = price;
+            ProductAdded = productAdded;
         }
         #endregion Constructors
     }
