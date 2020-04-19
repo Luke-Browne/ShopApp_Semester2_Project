@@ -71,6 +71,16 @@
             <TextBlock x:Name="tblkTotalQuantity" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="360,10,0,0" FontSize="24"/>
             <TextBlock x:Name="totalPriceTxt" TextWrapping="Wrap" Text="Total Price of Items in Cart: " FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30, 60, 0, 0"/>
             <TextBlock x:Name="tblkTotalPrice" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="360,60,0,0" FontSize="24"/>
+            <TextBlock x:Name="discountTxt" TextWrapping="Wrap" Text="Discount Code : " FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30, 110, 0, 0"/>
+            <TextBox x:Name="txtBoxDiscount" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,110,0,0" FontSize="24" Width="100"/>
+            <Button Name="btnApplyDiscount" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Apply" FontSize="8" Margin="310,110,0,0" Height="34" Click="BtnApplyDiscount_Click"/>
+            <TextBlock x:Name="tblkDiscount" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="360,110,0,0" FontSize="24" TextDecorations="{x:Null}"/>
+                <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="65" BorderBrush="#FF447DBC" CornerRadius="3" BorderThickness="3" Width="480">
+                    <Grid>
+                        <TextBlock x:Name="finalTxt" TextWrapping="Wrap" Text="Total Price after Discount : " FontSize="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 10, 0, 0" FontWeight="Bold"/>
+                        <TextBlock x:Name="tblkGrandTotal" TextWrapping="Wrap" Text="" FontSize="28" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="375,10,0,0"/>
+                    </Grid>
+                </Border>
             </Grid>
         </Border>
     </Grid>

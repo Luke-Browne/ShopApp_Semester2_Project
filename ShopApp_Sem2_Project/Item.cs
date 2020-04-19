@@ -70,4 +70,21 @@ namespace ShopApp_Sem2_Project
         }
         #endregion Constructors
     }
+    public class discountCode
+    {
+        #region Properties
+        public int CodeID { get; set; }
+        public string Code { get; set; }
+        public int Value { get; set; }
+        #endregion Properties
+
+        #region Constructors
+        public discountCode(int codeID, string code, int value)
+        {
+            CodeID = codeID;
+            Code = code;
+            Value = value;
+        }
+        #endregion Constructors
+    }
 }

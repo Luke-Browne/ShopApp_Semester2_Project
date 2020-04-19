@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace ShopApp_Sem2_Project
 {
@@ -23,6 +24,7 @@ namespace ShopApp_Sem2_Project
         public decimal price;
 
         private List<cartItem> cartItems;
+        private List<discountCode> discountCodes = new List<discountCode>(); 
 
         private int totalQuantity;
         private decimal totalPrice;
@@ -79,6 +81,57 @@ namespace ShopApp_Sem2_Project
                         break;
                 case MessageBoxResult.No:
                     break;
+            }
+        }
+
+        private void BtnApplyDiscount_Click(object sender, RoutedEventArgs e)
+        {
+            discountCodes.Clear();
+
+            string enteredCode = txtBoxDiscount.Text;
+
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Owner\Desktop\College Work\OOD\ShopApp_Sem2_Project\discounts.mdf;Integrated Security=True;";
+
+            SqlConnection sqlCon = new SqlConnection(connectionString);
+
+            string query = "SELECT * FROM discounts ORDER BY codeID";
+
+            sqlCon.Open();
+
+            SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
+
+            SqlDataReader dr = sqlCmd.ExecuteReader();
+
+            if(dr.HasRows)
+            {
+                while(dr.Read())
+                {
+                    discountCode newCode = new discountCode(Convert.ToInt32(dr[0]), dr[1].ToString(), Convert.ToInt32(dr[2]));
+
+                    discountCodes.Add(newCode);
+                }
+                if(discountCodes != null)
+                {
+                    var result = from d in discountCodes
+                                  where d.Code == enteredCode
+                                  select d.Code;
+
+                    if(result.ToString() == enteredCode)
+                    {
+                        var values = from d in discountCodes
+                                    where d.Code == enteredCode
+                                    select d.Value;
+
+                        foreach(int value in values)
+                        {
+                            MessageBox.Show($"Code Entered Correct! Applying discount of {value}%.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry but that Discount Code was not recognized, please check you have entered your code correctly and try again!");
+                    }
+                }
             }
         }
     }

@@ -84,6 +84,24 @@
     <Compile Include="cart.xaml.cs">
       <DependentUpon>cart.xaml</DependentUpon>
     </Compile>
+    <Compile Include="discounts.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>discounts.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="discounts.cs">
+      <DependentUpon>discounts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="discounts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>discounts.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="discounts1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>discounts.tt</DependentUpon>
+    </Compile>
     <Compile Include="Item.cs" />
     <Compile Include="items.Context.cs">
       <AutoGen>True</AutoGen>
@@ -183,6 +201,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>items.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="discounts.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>discounts.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="discounts.edmx.diagram">
+      <DependentUpon>discounts.edmx</DependentUpon>
+    </None>
     <None Include="items.edmx.diagram">
       <DependentUpon>items.edmx</DependentUpon>
     </None>
@@ -214,6 +239,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="discounts.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>discounts.Context.cs</LastGenOutput>
+      <DependentUpon>discounts.edmx</DependentUpon>
+    </Content>
+    <Content Include="discounts.edmx.sql" />
+    <Content Include="discounts.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>discounts1.cs</LastGenOutput>
+      <DependentUpon>discounts.edmx</DependentUpon>
+    </Content>
     <Content Include="items.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>items.Context.cs</LastGenOutput>
