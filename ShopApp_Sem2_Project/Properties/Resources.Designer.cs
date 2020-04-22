@@ -103,6 +103,26 @@ namespace ShopApp_Sem2_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap belt_holster_small {
+            get {
+                object obj = ResourceManager.GetObject("belt_holster_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap crye_top_small {
+            get {
+                object obj = ResourceManager.GetObject("crye_top_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap F18_Tan_small {
             get {
                 object obj = ResourceManager.GetObject("F18_Tan_small", resourceCulture);
@@ -116,6 +136,16 @@ namespace ShopApp_Sem2_Project.Properties {
         internal static System.Drawing.Bitmap G3A3_GBB_small {
             get {
                 object obj = ResourceManager.GetObject("G3A3_GBB_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap glock_holster_small {
+            get {
+                object obj = ResourceManager.GetObject("glock_holster_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +186,96 @@ namespace ShopApp_Sem2_Project.Properties {
         internal static System.Drawing.Bitmap M93RII_small {
             get {
                 object obj = ResourceManager.GetObject("M93RII_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mechanix_small {
+            get {
+                object obj = ResourceManager.GetObject("mechanix_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap modular_rig_small {
+            get {
+                object obj = ResourceManager.GetObject("modular_rig_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap recon_rig_small {
+            get {
+                object obj = ResourceManager.GetObject("recon_rig_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap retention_holster_small {
+            get {
+                object obj = ResourceManager.GetObject("retention_holster_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shotgun_scabbard_small {
+            get {
+                object obj = ResourceManager.GetObject("shotgun_scabbard_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tac_vest_small {
+            get {
+                object obj = ResourceManager.GetObject("tac_vest_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tmc_gen4_knee_small {
+            get {
+                object obj = ResourceManager.GetObject("tmc_gen4_knee_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tmc_gen4_small {
+            get {
+                object obj = ResourceManager.GetObject("tmc_gen4_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viper_rig_small {
+            get {
+                object obj = ResourceManager.GetObject("viper_rig_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

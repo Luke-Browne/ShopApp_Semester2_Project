@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Title: Airsoft Shop App
+// Author: Luke Browne 
+// Student ID: S00187306
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +31,10 @@ namespace ShopApp_Sem2_Project
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Main.Content = new login();
+            Main.Content = new login(); // So in order to switch between pages I decided to use pages instead of tabs
+                                            // I have a frame called "main" declared in the MainWindow.xaml which has everything loaded in on top of it
 
-            this.Title = "Airsoft Shop App";
+            this.Title = "Airsoft Shop App"; 
         }
     }
 }

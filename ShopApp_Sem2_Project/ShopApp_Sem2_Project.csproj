@@ -273,6 +273,18 @@
     <None Include="Resources\F18-Tan-small.jpg" />
     <None Include="Resources\M93RII-small.jpg" />
     <None Include="Resources\Glock17-small.jpg" />
+    <None Include="Resources\tmc-gen4-small.jpg" />
+    <None Include="Resources\crye-top-small.jpg" />
+    <None Include="Resources\mechanix-small.jpg" />
+    <None Include="Resources\tmc-gen4-knee-small.jpg" />
+    <None Include="Resources\belt-holster-small.jpg" />
+    <None Include="Resources\glock-holster-small.jpg" />
+    <None Include="Resources\retention-holster-small.jpg" />
+    <None Include="Resources\shotgun-scabbard-small.jpg" />
+    <None Include="Resources\viper-rig-small.jpg" />
+    <None Include="Resources\tac-vest-small.jpg" />
+    <None Include="Resources\recon-rig-small.jpg" />
+    <None Include="Resources\modular-rig-small.jpg" />
     <Content Include="users.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>users.Context.cs</LastGenOutput>

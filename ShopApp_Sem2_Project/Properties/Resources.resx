@@ -145,7 +145,43 @@
   <data name="M93RII_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\M93RII-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="tmc_gen4_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tmc-gen4-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_1911_Hi_capa_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1911-Hi-capa-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crye_top_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crye-top-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mechanix_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mechanix-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tmc_gen4_knee_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tmc-gen4-knee-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="belt_holster_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\belt-holster-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="glock_holster_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\glock-holster-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="retention_holster_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\retention-holster-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shotgun_scabbard_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shotgun-scabbard-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="viper_rig_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\viper-rig-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tac_vest_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tac-vest-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="recon_rig_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\recon-rig-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="modular_rig_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modular-rig-small.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
