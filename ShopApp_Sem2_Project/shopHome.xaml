@@ -18,10 +18,10 @@
             <ColumnDefinition Width="149*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="0" Background="#FFD67554"/>
-        <Border Grid.Column="1" Background="#FFD78164"/>
-        <Border Grid.Row="1" Background="#FFD78164"/>
-        <Border Grid.Column="1" Grid.Row="1" BorderBrush="#FF447DBC" BorderThickness="3px"/>
+        <Border Grid.Column="0" Background="#FF424445"/>
+        <Border Grid.Column="1" Background="#FF424445"/>
+        <Border Grid.Row="1" Background="#FF424445"/>
+        <Border Grid.Column="1" Grid.Row="1" BorderBrush="#FF447DBC" BorderThickness="3px" Background="#FFFD7E7E"/>
 
         <ListBox HorizontalContentAlignment="Center" x:Name="lbxCategories" HorizontalAlignment="Left" Height="325" VerticalAlignment="Top" Width="175" Margin="20,10.539,0,0" Grid.Row="1" Background="#FFC7D0D9" Loaded="LbxCategories_Loaded" FontSize="18" SelectionChanged="LbxCategories_SelectionChanged" BorderBrush="Black"/>
         <TextBlock HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" Text="Categories" VerticalAlignment="Top" Width="175" TextAlignment="Center" Height="40" FontSize="28"/>

@@ -1,0 +1,7 @@
+So don't be alarmed don't worry I'm not a gun nut or anything haha
+I do a hobby called airsoft so I based my app around a simple shop which sells airsoft gear
+I also included a login/register system that took me WAY too long to impliment
+And I have a simple console app hooked up which generates random 6-figure discount codes to be used in the app
+
+username = keith
+password = password

@@ -53,10 +53,10 @@
             <ColumnDefinition Width="149*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="0" Background="#FFD67554"/>
-        <Border Grid.Column="1" Background="#FFD78164"/>
-        <Border Grid.Row="1" Background="#FFD78164"/>
-        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="3px"/>
+        <Border Grid.Column="0" Background="#FF424445"/>
+        <Border Grid.Column="1" Background="#FF424445"/>
+        <Border Grid.Row="1" Background="#FF424445"/>
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="3px" Background="#FFFD7E7E"/>
 
         <ListBox x:Name="lbxCartItems" HorizontalAlignment="Left" Height="325" VerticalAlignment="Top" Width="240" Margin="20,10.539,0,0" Grid.Row="1" Background="#FFC7D0D9" FontSize="16" BorderBrush="Black" Loaded="LbxCartItems_Loaded"/>
         <TextBlock HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Cart" VerticalAlignment="Top" Width="175" TextAlignment="Center" Height="40" FontSize="28"/>

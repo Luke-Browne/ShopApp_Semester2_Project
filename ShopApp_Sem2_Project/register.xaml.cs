@@ -80,6 +80,7 @@ namespace ShopApp_Sem2_Project
                     if (isRegistered == true) // if the method returns true then the username is already taken and the user must come up with another
                     {
                         MessageBox.Show("Username already taken please try again with a different username");
+                        break;
                     }
                     else if (isRegistered == false)
                     {

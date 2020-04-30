@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="register">
 
-    <Grid Background="#FFD78164">
+    <Grid Background="#FFFD7E7E">
         <TextBlock HorizontalAlignment="Left" Margin="125,50,0,0" TextWrapping="Wrap" Text="Username :" VerticalAlignment="Top" Height="50" Width="200" FontSize="38"/>
         <TextBlock HorizontalAlignment="Left" Margin="125,150,0,0" TextWrapping="Wrap" Text="Password  :" VerticalAlignment="Top" Height="50" Width="200" FontSize="38"/>
         <TextBox BorderBrush="Black" x:Name="txtUsername" HorizontalAlignment="Left" Margin="385,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="55" Width="200" FontSize="38" Background="#FFC7D0D9"/>
